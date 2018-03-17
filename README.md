@@ -1,6 +1,6 @@
 # OpenFaaS Code Eval
 
-Code eval as a service. Powered by [OpenFaaS](https://www.openfaas.com/). (WIP)
+Code eval as a service. Powered by [OpenFaaS](https://www.openfaas.com/).
 
 ## Setup
 
@@ -27,7 +27,7 @@ $ faas-cli deploy -f template.yml
 
 Test:
 
-```
+```sh
 $ curl -X POST http://localhost:8080/function/eval -d \
   '{"code": "let test = 4; console.log(test + 21)"}'
 {"status":"success","results":"25"}%
