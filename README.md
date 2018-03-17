@@ -24,3 +24,11 @@ Deploy:
 ```sh
 $ faas-cli deploy -f template.yml
 ```
+
+Test:
+
+```
+$ curl -X POST http://localhost:8080/function/eval -d \
+  '{"code": "let test = 4; console.log(test + 21)"}'
+{"status":"success","results":"25"}%
+```

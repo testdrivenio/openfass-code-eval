@@ -6,7 +6,7 @@ RUN chmod +x /usr/bin/fwatchdog
 
 WORKDIR /app
 ADD package.json .
-ADD index.js .
+ADD handler.js .
 
 RUN npm i
 

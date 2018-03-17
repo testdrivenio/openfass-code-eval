@@ -10,7 +10,7 @@ module.exports = (content, callback) => {
   const request = JSON.parse(content);
   const code = request.code;
   if (code) {
-    fs.writeFile(path.join(__dirname, 'sample.js'), code, (err) => {
+    fs.writeFile('sample.js', code, (err) => {
       if(err) {
         const returnObject = {
           status: 'error',
@@ -19,8 +19,6 @@ module.exports = (content, callback) => {
         callback(JSON.stringify(returnObject));
       } else {
         const results = shell.exec('node sample.js', { silent: true });
-        callback(JSON.stringify(results));
-        console.log(JSON.stringify({'results': results.trim()}));
         const returnObject = {
           status: 'success',
           results: results.trim()
